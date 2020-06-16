@@ -1,0 +1,19 @@
+{
+  "name": "catalogobackend",
+  "version": "1.0.0",
+  "description": "API del Proyecto Catálogo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtrejo17/CatalogoBackend.git"
+  },
+  "author": "Marcos Trejo Reyes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mtrejo17/CatalogoBackend/issues"
+  },
+  "homepage": "https://github.com/mtrejo17/CatalogoBackend#readme"
+}
