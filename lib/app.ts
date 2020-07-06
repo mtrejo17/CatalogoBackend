@@ -4,13 +4,16 @@ import * as methodOverride from "method-override";
 import * as mongoose from "mongoose";
 import * as http from "http";
 import { SERVER_PORT, urlDB } from './config';
+import { Routes } from './routes';
 
 
 export  class App {
     public app: express.Application;
+    public routes: Routes = new Routes();
 
     public constructor() {
         this.app = express();
+        this.routes.routes(this.app);
     }
 
     public conectar() {

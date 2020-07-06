@@ -91,4 +91,45 @@ export class UsuarioController {
 
     }
 
+    public actualizarUsuario = (req: Request, res: Response) => {
+        Usuario.findByIdAndUpdate(req.params.id, req.body, {new: true, runValidators: true}, (err, usuarioActualizado) => {
+            if (err) {
+                return res.status(400).json({
+                    ok: false,
+                    message: 'usuario no actualizado',
+                    error: err
+                });
+            }
+            res.status(200).json(
+                {
+                    ok: true,
+                    usuarioActualizado,
+                    message: 'Usuario actualizado'
+                }
+            );
+        });
+    }
+
+    public eliminarUsuario = (req: Request, res: Response) => {
+        Usuario.findByIdAndRemove(req.params.id)
+        .then( eliminado => {
+                res.status(200).json(
+                    {
+                        ok: true,
+                        message: 'Usuario eliminado'
+                    }
+                );
+        })
+        .catch(err => {
+            return res.status(400).json(
+                {
+                    ok: false,
+                    message: 'Usuario no eliminado',
+                    error: err
+                }
+            );
+        })
+    }
+
+
 }
